@@ -3,3 +3,14 @@
 
 # Packaging
 .cask
+
+# Local files and dirs
+elpa/
+ido.last
+tramp
+url/
+auot-save-list/
+auto-save-list/
+games/
+.org-id-locations
+custom.el
