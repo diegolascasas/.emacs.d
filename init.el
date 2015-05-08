@@ -1,34 +1,49 @@
-
 ;; Window Configuration
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (setq inhibit-splash-screen t)
 
-(when window-system
-  (global-linum-mode 1)
-  (text-scale-increase 1))
-
-
 ;; Builtin Configs
+
+;; Ido
 (ido-mode 1)
+
+;; setup electric-pair
 (electric-pair-mode 1)
 (setq electric-pair-pairs '(
 			    (?\" . ?\")
                             (?\{ . ?\})
 			    ))
 
-
+;; Activate disabled keys
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
+;; Enable windmove
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
 
+;; Store backups and autosave in .emacs.d
+(make-directory "~/.emacs.d/autosaves/" t)
+(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
 
-;; Theme
+(make-directory "~/.emacs.d/backups/" t)
 
-;; Inhibit splashscreen and open Bookamark and To-Do list
+(setq  backup-directory-alist '((".*" . "~/.emacs.d/backups/"))
+       version-control t
+       delete-old-versions t
+       kept-new-versions 4
+       kept-old-versions 1)
+
+;; Disable for sudo and su
+(setq backup-enable-predicate
+      (lambda (name)
+	(and (normal-backup-enable-predicate name)
+	     (not
+	      (let ((method (file-remote-p name 'method)))
+		(when (stringp method)
+		  (member method '("su" "sudo"))))))))
 
 
 ;; ;; deal with accents (linux only?)
@@ -48,21 +63,6 @@
 
 
 
-(defun system-is-mac ()
-  (interactive)
-  (string-equal system-type "darwin"))
-
-(defun system-is-linux ()
-  (interactive)
-  (string-equal system-type "gnu/linux"))
-
-
-(defun toggle-fullscreen ()
-  "Toggle full screen"
-  (interactive)
-  (set-frame-parameter
-     nil 'fullscreen
-     (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 
 
 ;; Packages
@@ -166,3 +166,14 @@
     (load "tex-settings"))
     ;; (load "dired-settings")
     ;; (load "org-settings"))
+
+(when window-system
+  (global-linum-mode 1)
+  (text-scale-increase 1))
+
+(defun toggle-fullscreen ()
+  "Toggle full screen"
+  (interactive)
+  (set-frame-parameter
+     nil 'fullscreen
+     (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
