@@ -31,22 +31,6 @@
 ;; Inhibit splashscreen and open Bookamark and To-Do list
 
 
-;; ;; deal with accents (linux only?)
-;; (require 'iso-transl)
-
-;; ;; cedilla!
-;; (global-set-key (kbd "<dead-acute> c")
-;; 		'(lambda () (interactive) (insert ?ç)))
-
-
-;; (setq locale-coding-system 'utf-8)
-;; (set-terminal-coding-system 'utf-8)
-;; (set-keyboard-coding-system 'utf-8)
-;; (set-selection-coding-system 'utf-8)
-;; (prefer-coding-system 'utf-8)
-;; (setenv "LC_CTYPE" "UTF-8")
-
-
 
 (defun system-is-mac ()
   (interactive)
@@ -63,6 +47,26 @@
   (set-frame-parameter
      nil 'fullscreen
      (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+
+
+
+(when (system-is-linux)
+  (require 'iso-transl)
+  (global-set-key (kbd "<dead-acute> c")
+ 		'(lambda () (interactive) (insert ?ç))))
+;; ;; deal with accents (linux only?)
+;; 
+
+;; ;; cedilla!
+
+
+;; (setq locale-coding-system 'utf-8)
+;; (set-terminal-coding-system 'utf-8)
+;; (set-keyboard-coding-system 'utf-8)
+;; (set-selection-coding-system 'utf-8)
+;; (prefer-coding-system 'utf-8)
+;; (setenv "LC_CTYPE" "UTF-8")
+
 
 
 ;; Packages
