@@ -14,10 +14,20 @@
 ;;   :ensure t)
 
 (load "auctex.el" nil t t)
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master "main")
+(add-hook 'latex-mode-hook 'turn-on-reftex)
+(add-hook 'Latex-mode-hook 'turn-on-reftex)
+(setq reftex-plug-into-auctex t)
+
 
 ;; (load "preview-latex.el" nil t t)
 
 (setq-default ispell-program-name "aspell") ;; aspell is the spellchecker of choice
+
+;;;;; AUCTEX
+
 
 
 ;; source: http://www.jesshamrick.com/2013/03/31/macs-and-emacs/

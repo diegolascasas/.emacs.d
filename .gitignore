@@ -4,16 +4,19 @@
 # Packaging
 .cask
 
-# Local files and dirs
-elpa/
-ido.last
-tramp
-url/
-auot-save-list/
-auto-save-list/
-games/
-.org-id-locations
+# Custom settings
 custom.el
-autosaves
+
+# Directories containing local files
+elpa/
+auto-save-list/
 backups/
 autosaves/
+url/
+games/
+org
+
+# Files containing info related to other sessions
+ido.last
+tramp
+.org-id-locations
