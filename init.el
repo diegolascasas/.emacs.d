@@ -135,6 +135,10 @@
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
 
 
+(use-package magit
+  :config (setq magit-last-seen-setup-instructions "1.4.0")
+  :ensure t)
+
 ;; Specific settings are not loaded when in the shell.
 (when window-system 
   (load "ess-settings")
@@ -147,7 +151,11 @@
   (global-linum-mode 1)
   (text-scale-increase 1))
 
+<<<<<<< HEAD
+(when (system-is-mac)
+=======
 (when system-is-mac
+>>>>>>> cb84d5c... Source code pro only in macs for now
   (set-default-font "Source Code Pro 13"))
 
 ;; custom.el is not in the git repo, so we need to create an empty file.... (TO-DO: make this better)
