@@ -66,9 +66,11 @@
 
 ;; Fix linux keyboard issues with accents
 (when (system-is-linux)
-  (use-package iso-transl
-    :bind
-    ("<dead-acute> c" . '(lambda () (interactive) (insert ?ç)))))
+  (use-package iso-transl))
+;;    :bind
+;;     ("<dead-acute> c" . '(lambda () (interactive) (insert ?ç)))))
+;;
+
 
 (defun system-is-mac ()
   (interactive)
@@ -87,11 +89,11 @@
      (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 
 
-
 (when (system-is-linux)
   (require 'iso-transl)
   (global-set-key (kbd "<dead-acute> c")
- 		'(lambda () (interactive) (insert ?ç))))
+ 		(lambda () (interactive) (insert ?ç))))
+
 ;; ;; deal with accents (linux only?)
 ;; 
 
@@ -143,7 +145,9 @@
     :init (load-theme 'monokai t)
     :ensure t)
   (global-linum-mode 1)
-  (text-scale-increase 1)
+  (text-scale-increase 1))
+
+(when system-is-mac
   (set-default-font "Source Code Pro 13"))
 
 ;; custom.el is not in the git repo, so we need to create an empty file.... (TO-DO: make this better)
