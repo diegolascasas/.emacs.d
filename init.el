@@ -153,9 +153,6 @@
 
 <<<<<<< HEAD
 (when (system-is-mac)
-=======
-(when system-is-mac
->>>>>>> cb84d5c... Source code pro only in macs for now
   (set-default-font "Source Code Pro 13"))
 
 ;; custom.el is not in the git repo, so we need to create an empty file.... (TO-DO: make this better)
