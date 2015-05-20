@@ -151,7 +151,6 @@
   (global-linum-mode 1)
   (text-scale-increase 1))
 
-<<<<<<< HEAD
 (when (system-is-mac)
   (set-default-font "Source Code Pro 13"))
 
