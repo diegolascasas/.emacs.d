@@ -27,7 +27,6 @@ Works in Microsoft Windows, Mac OS X, Linux."
 (add-hook 'dired-mode-hook
 	  (lambda ()
 	     (local-set-key (kbd "M-o") 'open-in-external-app)))
- 
 
 ;; Uncompress .zip files with Z in dired.
 ;; More on: http://stackoverflow.com/questions/1431351/how-do-i-uncompress-unzip-within-emacs
@@ -41,3 +40,6 @@ Works in Microsoft Windows, Mac OS X, Linux."
   :commands (eimp-mode)
   :init (add-hook 'image-mode-hook 'eimp-mode)
   :ensure t)
+
+;;; Set dired ls switches
+(setq dired-listing-switches "-hAl --no-group --time-style long-iso")
