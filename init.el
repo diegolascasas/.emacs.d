@@ -139,6 +139,10 @@
   :config (setq magit-last-seen-setup-instructions "1.4.0")
   :ensure t)
 
+(use-package yasnippet
+  :config (yas-global-mode 1)
+  :ensure t)
+
 ;; Specific settings are not loaded when in the shell.
 (when window-system 
   (load "ess-settings")
