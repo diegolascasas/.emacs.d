@@ -25,6 +25,12 @@
 (scroll-bar-mode -1)
 (setq inhibit-splash-screen t)
 
+;; Start with bookmarks
+(use-package bookmark)
+(bookmark-bmenu-list)
+(switch-to-buffer "*Bookmark List*")
+
+
 ;; Ido
 (ido-mode 1)
 
