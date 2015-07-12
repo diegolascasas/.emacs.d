@@ -1,55 +1,44 @@
-; Auctex
+;; aspell is more portable
+(setq-default ispell-program-name "aspell") 
 
-;; (use-package auctex
-;;   :defer t
-;;   :init
-;;   (load "auctex.el" nil t t)
-;;   :config
-;;   (progn
-;;     (setq-default TeX-master "main")
-;;     (setq TeX-PDF-mode t)
-;;     (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-;;     (setq reftex-plug-into-AUCTeX t)
-;;     (setq TeX-parse-self t))
-;;   :ensure t)
+;;Auctex
 
-(load "auctex.el" nil t t)
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
-(setq-default TeX-master "main")
-(add-hook 'latex-mode-hook 'turn-on-reftex)
-(add-hook 'Latex-mode-hook 'turn-on-reftex)
-(setq reftex-plug-into-auctex t)
+(use-package auctex
+  :mode ("\\.tex\\'" . latex-mode)
+  :commands (latex-mode LaTeX-mode plain-tex-mode)
+  :init
+  (progn
+    (add-hook 'LaTeX-mode-hook #'turn-on-reftex)
+    (add-hook 'LaTeX-mode-hook #'flyspell-mode)
+    (setq TeX-PDF-mode t
+	  TeX-parse-self t
+	  TeX-autosave t))
+  :ensure t)
+
+(use-package preview
+  :commands LaTeX-preview-setup
+  :init
+  (progn
+    (setq-default preview-scale 1.4
+		  preview-scale-function '(lambda () (* (/ 10.0 (preview-document-pt)) preview-scale)))))
+
+(use-package reftex
+  :commands turn-on-reftex
+  :init
+  (progn
+    (setq reftex-plug-into-AUCTeX t)))
+
+(use-package bibtex
+  :mode ("\\.bib" . bibtex-mode)
+  :init
+  (progn
+    (setq bibtex-align-at-equal-sign t)))
 
 
-;; (load "preview-latex.el" nil t t)
-
-(setq-default ispell-program-name "aspell") ;; aspell is the spellchecker of choice
-
-;;;;; AUCTEX
-
-
-
-;; source: http://www.jesshamrick.com/2013/03/31/macs-and-emacs/
-;; (if (system-is-mac)
-;;  (progn
-;;   (require 'tex-site)
-;;   (require 'font-latex)
-;;   (setq TeX-view-program-list
-;;    (quote
-;;     (("Skim"
-;;       (concat "/Applications/Skim.app/"
-;;         "Contents/SharedSupport/displayline"
-;;         " %n %o %b")))))
-;;   (setq TeX-view-program-selection
-;;    (quote (((output-dvi style-pstricks) "dvips and gv")
-;;       (output-dvi "xdvi")
-;;       (output-pdf "Skim")
-;;       (output-html "xdg-open")))))
-
-;;   (if (system-is-linux)
-;;    (setq TeX-view-program-selection
-;;     (quote (((output-dvi style-pstricks) "dvips and gv")
-;;        (output-dvi "xdvi")
-;;        (output-pdf "evince"
-;;        (output-html "xdg-open"))))))
+;; (load "auctex.el" nil t t)
+;; (setq TeX-auto-save t)
+;; (setq TeX-parse-self t)
+;; (setq-default TeX-master "main")
+;; (add-hook 'latex-mode-hook 'turn-on-reftex)
+;; (add-hook 'Latex-mode-hook 'turn-on-reftex)
+;; (setq reftex-plug-into-auctex t)

@@ -71,22 +71,26 @@
 ;;     ("<dead-acute> c" . '(lambda () (interactive) (insert ?ç)))))
 ;;
 
+;; use command for meta (instead of option) in macs
+(when (system-is-mac)
+  (setq mac-option-modifier 'super)
+  (setq mac-command-modifier 'meta))
 
-(defun system-is-mac ()
-  (interactive)
-  (string-equal system-type "darwin"))
+;; (defun system-is-mac ()
+;;   (interactive)
+;;   (string-equal system-type "darwin"))
 
-(defun system-is-linux ()
-  (interactive)
-  (string-equal system-type "gnu/linux"))
+;; (defun system-is-linux ()
+;;   (interactive)
+;;   (string-equal system-type "gnu/linux"))
 
 
-(defun toggle-fullscreen ()
-  "Toggle full screen"
-  (interactive)
-  (set-frame-parameter
-     nil 'fullscreen
-     (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+;; (defun toggle-fullscreen ()
+;;   "Toggle full screen"
+;;   (interactive)
+;;   (set-frame-parameter
+;;      nil 'fullscreen
+;;      (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 
 
 (when (system-is-linux)
