@@ -71,11 +71,6 @@
 ;;     ("<dead-acute> c" . '(lambda () (interactive) (insert ?ç)))))
 ;;
 
-;; use command for meta (instead of option) in macs
-(when (system-is-mac)
-  (setq mac-option-modifier 'super)
-  (setq mac-command-modifier 'meta))
-
 ;; (defun system-is-mac ()
 ;;   (interactive)
 ;;   (string-equal system-type "darwin"))
@@ -131,9 +126,8 @@
 (require 'use-package)
 
 (use-package monokai-theme
-	      :init
-	      (load-theme 'monokai t)
-	      :ensure t)
+  :init (load-theme 'monokai t)
+  :ensure t)
 
 ;; autolad octave mode for *.m-files
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
@@ -156,6 +150,10 @@
   (use-package monokai-theme
     :init (load-theme 'monokai t)
     :ensure t)
+  ;; use command for meta (instead of option) in macs
+  (when (system-is-mac)
+    (setq mac-option-modifier 'super)
+    (setq mac-command-modifier 'meta))
   (global-linum-mode 1)
   (text-scale-increase 1))
 
