@@ -6,5 +6,5 @@ My Emacs dotfile.
 - In a mac a remap Meta to cmd and Super to option, but only in the graphical interface.
 
 * Next Steps
-** [[https://github.com/bbatsov/projectile][Add Projectile]]
-** [[http://tuhdo.github.io/helm-intro.html][Add Helm]]
+- [[https://github.com/bbatsov/projectile][Add Projectile]]
+- [[http://tuhdo.github.io/helm-intro.html][Add Helm]]
