@@ -8,17 +8,18 @@ Works in Microsoft Windows, Mac OS X, Linux."
 	(myFileList (cond
 		     ((string-equal major-mode "dired-mode") (dired-get-marked-files))
 		     (t (list (buffer-file-name))))))
-    (setq doIt (if (<= (length myFileList) 5) t (y-or-n-p "Open more than 5 files?")))
+    (setq doIt
+	  (if (<= (length myFileList) 5) t (y-or-n-p "Open more than 5 files?")))
 
     (when doIt
       (cond 
-       ((string-equal system-type "windows-nt")
+       ((system-is-windows)
 	(mapc (lambda (fPath)
 		(w32-shell-execute "open" (replace-regexp-in-string "/" "\\" fPath t t)) ) myFileList))
-       ((string-equal system-type "darwin")
+       ((system-is-max)
         (mapc (lambda (fPath)
-		(let ((process-connection-type nil)) (start-process "" nil "open" fPath)) )  myFileList))       
-       ((string-equal system-type "gnu/linux")
+		(let ((process-connection-type nil)) (start-process "" nil "open" fPath)) ) myFileList)) 
+       ((system-is-linux)
         (mapc (lambda (fPath)
 		(let ((process-connection-type nil)) (start-process "" nil "xdg-open" fPath))) myFileList)) 
        ))))
@@ -42,4 +43,5 @@ Works in Microsoft Windows, Mac OS X, Linux."
   :ensure t)
 
 ;;; Set dired ls switches
-(setq dired-listing-switches "-hAl --no-group --time-style long-iso")
+;; (setq dired-listing-switches "-hAl --no-group --time-style long-iso")
+;; (setq dired-listing-switches "-hAl")

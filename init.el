@@ -77,22 +77,21 @@
 ;;     ("<dead-acute> c" . '(lambda () (interactive) (insert ?ç)))))
 ;;
 
+;; (defun system-is-mac ()
+;;   (interactive)
+;;   (string-equal system-type "darwin"))
 
-(defun system-is-mac ()
-  (interactive)
-  (string-equal system-type "darwin"))
-
-(defun system-is-linux ()
-  (interactive)
-  (string-equal system-type "gnu/linux"))
+;; (defun system-is-linux ()
+;;   (interactive)
+;;   (string-equal system-type "gnu/linux"))
 
 
-(defun toggle-fullscreen ()
-  "Toggle full screen"
-  (interactive)
-  (set-frame-parameter
-     nil 'fullscreen
-     (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+;; (defun toggle-fullscreen ()
+;;   "Toggle full screen"
+;;   (interactive)
+;;   (set-frame-parameter
+;;      nil 'fullscreen
+;;      (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 
 
 (when (system-is-linux)
@@ -133,9 +132,8 @@
 (require 'use-package)
 
 (use-package monokai-theme
-	      :init
-	      (load-theme 'monokai t)
-	      :ensure t)
+  :init (load-theme 'monokai t)
+  :ensure t)
 
 ;; autolad octave mode for *.m-files
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
@@ -158,6 +156,10 @@
   (use-package monokai-theme
     :init (load-theme 'monokai t)
     :ensure t)
+  ;; use command for meta (instead of option) in macs
+  (when (system-is-mac)
+    (setq mac-option-modifier 'super)
+    (setq mac-command-modifier 'meta))
   (global-linum-mode 1)
   (text-scale-increase 1))
 
