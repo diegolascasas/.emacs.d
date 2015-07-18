@@ -1,0 +1,61 @@
+* IDO
+  - M-d no find file procura pela ocorrencia em todos os subdiretorios
+  - M-m cria um novo subdiretorio
+  - M-s procura pelo input nos diretorios usados recentemente
+* Busca
+M-s
+| .   | isearch at point          |
+| o   | occur                     |
+| h . | highlight at point        |
+| h r | highlight regexp          |
+| h l | highlight lines at regexp |
+| h u | unhighlight               |
+
+* Occur
+No occur:
+No arquivo editado
+| M-g n | next match     |
+| M-g p | previous match |
+
+No buffer
+| e       | edita linha sem sair do buffer               |
+| C-c C-c | aplica edições                               |
+| g       | atualiza buffer                              |
+| o (C-o) | mostra match e leva cursor ao ponto (ou nao) |
+
+Ver também multi-occur e multi-occur-in-matching-buffers
+
+* Register
+Prefixo: C-x r
+REG é um caracter (case-sensitive)
+
+| w REG | Salva janela em registro                         |
+| p REG | Salva ponto no registro                          |
+| j REG | "pula" para registro                             |
+|-------+--------------------------------------------------|
+| s REG | salva texto no registro                          |
+| i REG | insere texto do registro                         |
+| r REG | copia retangulo no registro                      |
+|-------+--------------------------------------------------|
+| n REG | insere numero no regitro (prefixo, ou 0 default) |
+| + REG | incrementa número do registro                    |
+
+* Macros
+Prefixo: C-x C-k
+Nota: C-x ( ou f3 inicia C-x ) ou f4 finaliza, C-x e ou f4 executa.
+
+| C-k       | executa macro na cabeça do macro-ring |
+| C-n / C-p | cicla o macro-ring                    |
+| f3        | insere contador e incrementa          |
+|-----------+---------------------------------------|
+| C-i       | insere contador                       |
+| C-a       | incrementa contador                   |
+| C-c       | muda valor de contador                |
+| C-f       | muda formato da inserção do contador  |
+
+C-x q durante a definição do macro faz com que a macro peça confirmação do usuário naquele ponto.
+No prompt, C-r edita C-M-c 
+  
+* Misc
+C-x z repeat command
+depois z repete de novo

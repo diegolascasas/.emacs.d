@@ -21,3 +21,5 @@ ido.last
 tramp
 .org-id-locations
 /ido.last~
+/bookmarks
+/projectile-bookmarks.eld

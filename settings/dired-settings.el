@@ -29,13 +29,6 @@ Works in Microsoft Windows, Mac OS X, Linux."
 	  (lambda ()
 	     (local-set-key (kbd "M-o") 'open-in-external-app)))
 
-;; Uncompress .zip files with Z in dired.
-;; More on: http://stackoverflow.com/questions/1431351/how-do-i-uncompress-unzip-within-emacs
-(eval-after-load "dired-aux"
-   '(add-to-list 'dired-compress-file-suffixes 
-                 '("\\.zip\\'" ".zip" "unzip")))
-
-
 ;;; Use imagemagick to add image manipulation capabilities
 (use-package eimp
   :commands (eimp-mode)
