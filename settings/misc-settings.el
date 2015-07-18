@@ -69,6 +69,16 @@
   :ensure t)
 
 
+;;; Activate multiple cursors
+;; This is a fantastic package!
+(use-package multiple-cursors
+  :bind
+  ("C->" . mc/mark-next-like-this)
+  ("C-<" . mc/mark-previous-like-this)
+  ("C-c C-<" . mc/mark-all-like-this)
+  ("C-S-c C-S-c" . mc/edit-lines)
+  :ensure t)
+
 ;; (setq locale-coding-system 'utf-8)
 ;; (set-terminal-coding-system 'utf-8)
 ;; (set-keyboard-coding-system 'utf-8)
