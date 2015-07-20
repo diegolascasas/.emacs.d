@@ -30,6 +30,9 @@
 		(when (stringp method)
 		  (member method '("su" "sudo"))))))))
 
+;;;; Set re-builder to work with strings
+(require 're-builder)
+(setq reb-re-syntax 'string)
 
 ;;;; Enable windmove
 (when (fboundp 'windmove-default-keybindings)
