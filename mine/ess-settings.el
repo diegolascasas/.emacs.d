@@ -8,7 +8,9 @@
     (setq comint-scroll-to-bottom-on-input t)
     (setq comint-scroll-to-bottom-on-output t)
     (setq comint-move-point-for-output t)
-    (setq ess-eval-visibly-p nil)) ; Assincronous run 
+    (setq ess-eval-visibly-p nil)  ; Assincronous run
+    (setq ess-swv-processor 'knitr) ;; setup literal programming 
+    (setq ess-swv-plug-into-AUCTeX-p t))
   :ensure ess)
 
 
