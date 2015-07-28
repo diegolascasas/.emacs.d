@@ -8,6 +8,11 @@
 ;; autolad octave mode for *.m-files
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
 
+;;;; SQL -- truncate lines when using the shell
+(add-hook 'sql-interactive-mode-hook
+          (lambda ()
+            (toggle-truncate-lines t)))
+
 ;;;; Backup and Autosave files
 ;; Store in .emacs.d
 (make-directory "~/.emacs.d/autosaves/" t)

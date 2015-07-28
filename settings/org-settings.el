@@ -58,13 +58,13 @@
 
 
 ;; Track time
-(setq org-clock-idle-time nil)
-(setq org-log-done 'time)
-(defadvice org-clock-in (after wicked activate)
-  "Mark STARTED when clocked in"
-  (save-excursion
-    (catch 'exit
-      (org-back-to-heading t)
-      (if (looking-at org-outline-regexp) (goto-char (1- (match-end 0))))
-      (if (looking-at (concat " +" org-todo-regexp "\\( +\\|[ \t]*$\\)"))
-	  (org-todo "STARTED")))))
+;; (setq org-clock-idle-time nil)
+;; (setq org-log-done 'time)
+;; (defadvice org-clock-in (after wicked activate)
+;;   "Mark STARTED when clocked in"
+;;   (save-excursion
+;;     (catch 'exit
+;;       (org-back-to-heading t)
+;;       (if (looking-at org-outline-regexp) (goto-char (1- (match-end 0))))
+;;       (if (looking-at (concat " +" org-todo-regexp "\\( +\\|[ \t]*$\\)"))
+;; 	  (org-todo "STARTED")))))

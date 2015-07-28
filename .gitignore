@@ -24,3 +24,5 @@ tramp
 /bookmarks
 /projectile-bookmarks.eld
 /.mc-lists.el
+/image-dired/
+/timelog

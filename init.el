@@ -39,6 +39,7 @@
 (load "keybindings.el")
 (when window-system
   (load "window-sistem-settings")
+
   (load "ess-settings")
   (load "tex-settings")
   (load "dired-settings")
