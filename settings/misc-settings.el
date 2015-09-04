@@ -44,8 +44,12 @@
   (windmove-default-keybindings))
 
 ;;;; Fix linux keyboard issues with accents
+
 (when (system-is-linux)
-  (use-package iso-transl))
+  (require 'iso-transl)
+  (global-set-key (kbd "<dead-acute> c")
+ 		(lambda () (interactive) (insert ?ç))))
+
 
 
 ;;;; Activate ido with flx matching
@@ -57,12 +61,6 @@
   (setq ido-enable-flex-matching 1
 	ido-use-faces nil)
   :ensure t)
-
-;; alt:
-;; (when (system-is-linux)
-;;   (require 'iso-transl)
-;;   (global-set-key (kbd "<dead-acute> c")
-;;  		(lambda () (interactive) (insert ?ç))))
 
 ;;;; Activate guid-keys
 ;; (From Magnar and Sacha Chua talk: https://www.youtube.com/watch?v=87tjF_mYvpE&t=14m48s)
