@@ -46,3 +46,13 @@
   (load "org-settings")
   (load "project-management-settings.el"))
 
+;; I don't do much lisp programing, but allways write my notes in orgmode.
+;;  So the scratch buffer serves me better at org-mode.
+(setq initial-major-mode 'org-mode)
+(setq initial-scratch-message "\
+# This buffer is for notes you don't want to save. You can use
+# org-mode markup (and all Org's goodness) to organise the notes.
+# If you want to create a file, visit that file with C-x C-f,
+# then enter the text in that file's own buffer.
+ 
+")
