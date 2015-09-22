@@ -12,21 +12,22 @@
     (add-hook 'LaTeX-mode-hook #'flyspell-mode)
     (setq TeX-PDF-mode t
 	  TeX-parse-self t
-	  TeX-autosave t))
-  :ensure t)
+	  TeX-autosave t)))
 
 (use-package preview
   :commands LaTeX-preview-setup
   :init
   (progn
     (setq-default preview-scale 1.4
-		  preview-scale-function '(lambda () (* (/ 10.0 (preview-document-pt)) preview-scale)))))
+		  preview-scale-function '(lambda () (* (/ 10.0 (preview-document-pt)) preview-scale))))
+  :ensure auctex)
 
 (use-package reftex
   :commands turn-on-reftex
   :init
   (progn
-    (setq reftex-plug-into-AUCTeX t)))
+    (setq reftex-plug-into-AUCTeX t))
+  :ensure auctex)
 
 (use-package bibtex
   :mode ("\\.bib" . bibtex-mode)

@@ -32,8 +32,7 @@ Works in Microsoft Windows, Mac OS X, Linux."
 ;;; Use imagemagick to add image manipulation capabilities
 (use-package eimp
   :commands (eimp-mode)
-  :init (add-hook 'image-mode-hook 'eimp-mode)
-  :ensure t)
+  :init (add-hook 'image-mode-hook 'eimp-mode))
 
 ;;; Set dired ls switches
 ;; (setq dired-listing-switches "-hAl --no-group --time-style long-iso")

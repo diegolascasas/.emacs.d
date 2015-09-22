@@ -59,8 +59,7 @@
   (ido-everywhere 1)
   (flx-ido-mode 1)
   (setq ido-enable-flex-matching 1
-	ido-use-faces nil)
-  :ensure t)
+	ido-use-faces nil))
 
 ;;;; Activate guid-keys
 ;; (From Magnar and Sacha Chua talk: https://www.youtube.com/watch?v=87tjF_mYvpE&t=14m48s)
@@ -71,8 +70,7 @@
 				       "C-x 8" "C-c p")
 	guide-key/popup-window-position 'bottom
 	guide-key/recursive-key-sequence-flag t)
-  (guide-key-mode 1)
-  :ensure t)
+  (guide-key-mode 1))
 
 
 ;;; Activate multiple cursors
@@ -82,8 +80,7 @@
   ("C->" . mc/mark-next-like-this)
   ("C-<" . mc/mark-previous-like-this)
   ("C-c C-<" . mc/mark-all-like-this)
-  ("C-S-c C-S-c" . mc/edit-lines)
-  :ensure t)
+  ("C-S-c C-S-c" . mc/edit-lines))
 
 ;; (setq locale-coding-system 'utf-8)
 ;; (set-terminal-coding-system 'utf-8)
