@@ -88,3 +88,12 @@
 ;; (set-selection-coding-system 'utf-8)
 ;; (prefer-coding-system 'utf-8)
 ;; (setenv "LC_CTYPE" "UTF-8")
+
+
+(use-package processing-mode
+  :mode "\\.pde$"
+  :config
+  (setq processing-location "/usr/bin/processing-java")
+  (setq processing-application-dir "/Applications/Processing.app")
+  (setq processing-sketchbook-dir "~/Documents/Processing")
+  :defer t)
