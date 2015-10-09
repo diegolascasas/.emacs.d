@@ -44,6 +44,8 @@
   (rename-buffer "*Organizer*"))
 (global-set-key "\C-co" 'organizer)
 
+(setq org-default-notes-file (concat org-directory "organizer.org"))
+(define-key global-map "\C-cc" 'org-capture)
 
 ;; (global-set-key "\C-cl" 'org-store-link)
 ;; (global-set-key "\C-ca" 'org-agenda)

@@ -97,3 +97,14 @@
   (setq processing-application-dir "/Applications/Processing.app")
   (setq processing-sketchbook-dir "~/Documents/Processing")
   :defer t)
+
+(toggle-window-split)
+
+
+(use-package tramp
+  :config
+  (add-to-list 'tramp-default-proxies-alist
+	       '(nil "\\`root\\'" "/ssh:%h:"))
+  (add-to-list 'tramp-default-proxies-alist
+	       '((regexp-quote (system-name)) nil nil))
+  )
