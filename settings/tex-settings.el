@@ -1,5 +1,5 @@
 ;; aspell is more portable
-(setq-default ispell-program-name "aspell") 
+(setq-default ispell-program-name "aspell")
 
 ;;Auctex
 

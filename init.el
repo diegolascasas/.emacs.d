@@ -11,7 +11,7 @@
 ;;    everything tidy and donwlads the missing packagesfrom the repos.
 ;; - All my setups are in ./settings/
 ;; - The defuns are in ./settings/auxiliary-functions.el
-;; - Customized (local) settings are in ./custom.el. 
+;; - Customized (local) settings are in ./custom.el.
 (add-to-list 'load-path (expand-file-name "settings" user-emacs-directory))
 (load "auxiliary-functions.el")
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -56,5 +56,5 @@
 # org-mode markup (and all Org's goodness) to organise the notes.
 # If you want to create a file, visit that file with C-x C-f,
 # then enter the text in that file's own buffer.
- 
+
 ")

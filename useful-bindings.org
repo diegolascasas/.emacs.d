@@ -54,8 +54,8 @@ Nota: C-x ( ou f3 inicia C-x ) ou f4 finaliza, C-x e ou f4 executa.
 | C-f       | muda formato da inserção do contador  |
 
 C-x q durante a definição do macro faz com que a macro peça confirmação do usuário naquele ponto.
-No prompt, C-r edita C-M-c 
-  
+No prompt, C-r edita C-M-c
+
 * Misc
 C-x z repeat command
 depois z repete de novo

@@ -9,13 +9,13 @@
   (setq comint-scroll-to-bottom-on-output t)
   (setq comint-move-point-for-output t)
   (setq ess-eval-visibly-p nil)  ; Assincronous run
-  (setq ess-swv-processor 'knitr) ;; setup literal programming 
+  (setq ess-swv-processor 'knitr) ;; setup literal programming
   (setq ess-swv-plug-into-AUCTeX-p t)
 
   (setq ess-S-assign-key (kbd "C-="))
   (ess-toggle-S-assign-key nil)
 
-  (define-key ess-mode-map [(super .)] "%>%")  
+  (define-key ess-mode-map [(super .)] "%>%")
   ;; Reset indentation configurations so it works well with %>%
   (add-to-list 'ess-style-alist
 	       '(my-style
@@ -38,7 +38,7 @@
         (font-lock-add-keywords nil
 				'(("\\(%>%\\)" 1
 				   font-lock-builtin-face t)))))
-  
+
   (add-hook 'inferior-ess-mode-hook
           '(lambda()
              (local-set-key [C-up] 'comint-previous-input)

@@ -11,7 +11,7 @@
 (defun system-is-windows ()
   (interactive)
   (string-equal system-type "windows-nt"))
- 
+
 
 (defun toggle-fullscreen ()
   "Toggle full screen"
