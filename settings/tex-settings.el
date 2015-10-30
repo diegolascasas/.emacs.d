@@ -1,5 +1,6 @@
 ;; aspell is more portable
-(setq-default ispell-program-name "aspell")
+(when (executable-find "aspell")
+  (setq-default ispell-program-name "aspell"))
 
 ;;Auctex
 
