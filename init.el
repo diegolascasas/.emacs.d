@@ -15,7 +15,8 @@
 (add-to-list 'load-path (expand-file-name "settings" user-emacs-directory))
 (load "auxiliary-functions.el")
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
+(when (file-exists-p custom-file)
+  (load custom-file))
 
 ;; Add repositories
 (require 'package)
