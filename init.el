@@ -53,7 +53,7 @@
 (setq initial-major-mode 'org-mode)
 (setq initial-scratch-message "\
 # This buffer is for notes you don't want to save. You can use
-# org-mode markup (and all Org's goodness) to organise the notes.
+# org-mode markup (and all Org's goodness) to organize the notes.
 # If you want to create a file, visit that file with C-x C-f,
 # then enter the text in that file's own buffer.
 
