@@ -97,3 +97,6 @@
   (setq processing-application-dir "/Applications/Processing.app")
   (setq processing-sketchbook-dir "~/Documents/Processing")
   :defer t)
+
+;;;; Remove trailing whitespaces when saving
+(add-hook 'before-save-hook 'delete-trailing-whitespace)

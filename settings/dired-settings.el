@@ -12,16 +12,16 @@ Works in Microsoft Windows, Mac OS X, Linux."
 	  (if (<= (length myFileList) 5) t (y-or-n-p "Open more than 5 files?")))
 
     (when doIt
-      (cond 
+      (cond
        ((system-is-windows)
 	(mapc (lambda (fPath)
 		(w32-shell-execute "open" (replace-regexp-in-string "/" "\\" fPath t t)) ) myFileList))
        ((system-is-mac)
         (mapc (lambda (fPath)
-		(let ((process-connection-type nil)) (start-process "" nil "open" fPath)) ) myFileList)) 
+		(let ((process-connection-type nil)) (start-process "" nil "open" fPath)) ) myFileList))
        ((system-is-linux)
         (mapc (lambda (fPath)
-		(let ((process-connection-type nil)) (start-process "" nil "xdg-open" fPath))) myFileList)) 
+		(let ((process-connection-type nil)) (start-process "" nil "xdg-open" fPath))) myFileList))
        ))))
 
 ;; Bind this to C-c o
