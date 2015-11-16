@@ -98,8 +98,6 @@
   (setq processing-sketchbook-dir "~/Documents/Processing")
   :defer t)
 
-(toggle-window-split)
-
 
 (use-package tramp
   :config
@@ -108,3 +106,9 @@
   (add-to-list 'tramp-default-proxies-alist
 	       '((regexp-quote (system-name)) nil nil))
   )
+
+;;;; Remove trailing whitespaces when saving
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+
+(toggle-window-split)
