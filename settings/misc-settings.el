@@ -82,6 +82,13 @@
   ("C-c C-<" . mc/mark-all-like-this)
   ("C-S-c C-S-c" . mc/edit-lines))
 
+;; Activate expand-region
+;; Bind it close to mc
+(use-package expand-region
+  :bind
+  ("C-?" . er/expand-region))
+
+
 ;; (setq locale-coding-system 'utf-8)
 ;; (set-terminal-coding-system 'utf-8)
 ;; (set-keyboard-coding-system 'utf-8)
