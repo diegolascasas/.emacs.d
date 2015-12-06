@@ -67,7 +67,8 @@
 (use-package guide-key
   :config
   (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v"
-				       "C-x 8" "C-c p")
+				       "C-x 8" "C-c p"
+				       (bibtex-mode "C-c C-e"))
 	guide-key/popup-window-position 'bottom
 	guide-key/recursive-key-sequence-flag t)
   (guide-key-mode 1))
