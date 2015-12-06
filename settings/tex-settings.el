@@ -32,9 +32,9 @@
 
 (use-package bibtex
   :mode ("\\.bib" . bibtex-mode)
-  :init
-  (progn
-    (setq bibtex-align-at-equal-sign t)))
+  :config
+  (setq bibtex-align-at-equal-sign t)
+  (guide-key/add-local-guide-key-sequence "C-c C-e"))
 
 
 ;; (load "auctex.el" nil t t)

@@ -17,7 +17,7 @@
 	  (lambda (x) (and
 		       (string-match "=" x)
 		       (not (member x process-environment))
-		       (not (string-match "PATH=" x))))
+		       (not (string-match "^PATH=" x))))
 	  (split-string
 	   ;; run postactivate and copy its environment
 	   (shell-command-to-string (concat "source" " "

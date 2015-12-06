@@ -111,8 +111,10 @@
   (add-to-list 'tramp-default-proxies-alist
 	       '(nil "\\`root\\'" "/ssh:%h:"))
   (add-to-list 'tramp-default-proxies-alist
-	       '((regexp-quote (system-name)) nil nil))
-  )
+	       '((regexp-quote (system-name)) nil nil)))
+
+(use-package ace-jump-mode
+  :bind ("C-." . ace-jump-mode))
 
 ;;;; Remove trailing whitespaces when saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
