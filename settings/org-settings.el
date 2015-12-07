@@ -72,7 +72,7 @@
 
 ;; TODO: I'm defining the bib twice, I'd like to do it only once
 ;; TODO: bibkey for file paths is quite flexible, but is it the best option?
-;; TODO: Set the entry level dynamically instead of just prepending a "*" 
+;; TODO: Set the entry level dynamically instead of just prepending a "*"
 ;; TODO: Determine the bib abrev from \bibliography{} instead of using a default
 ;; TODO: Enabling global-auto-revert-mode in a mode hook seems buggy
 
@@ -85,7 +85,11 @@
 	 (global-auto-revert-mode t)
 	 (reftex-parse-all)
 	 ;add a custom reftex cite format to insert links
-	 (reftex-set-cite-format "* %t\n:PROPERTIES:\n:BIB: [[bib:%l]]\n:FILE: [[papers:%l.pdf]]\n:END:\n")))
+	 (reftex-set-cite-format (concat "* %t\n"
+					 ":PROPERTIES:\n"
+					 ":BIB: [[bib:%l]]\n"
+					 ":FILE: [[papers:%l.pdf]]\n"
+					 ":END:\n"))))
   (define-key org-mode-map (kbd "C-c )") 'reftex-citation))
 
 (add-hook 'org-mode-hook 'org-mode-reftex-setup)
