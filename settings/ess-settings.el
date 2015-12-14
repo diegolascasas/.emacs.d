@@ -12,8 +12,10 @@
   (setq ess-swv-processor 'knitr) ;; setup literal programming
   (setq ess-swv-plug-into-AUCTeX-p t)
 
-  (setq ess-S-assign-key (kbd "C-="))
+  (setq ess-smart-S-assign-key "C-=")
   (ess-toggle-S-assign-key nil)
+
+
 
   (define-key ess-mode-map [(super .)] "%>%")
   ;; Reset indentation configurations so it works well with %>%

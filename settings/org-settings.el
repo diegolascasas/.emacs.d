@@ -87,7 +87,7 @@
 	 ;add a custom reftex cite format to insert links
 	 (reftex-set-cite-format (concat "* %t\n"
 					 ":PROPERTIES:\n"
-					 ":BIB: [[bib:%l]]\n"
+					 ":BIB:  [[bib:%l]]\n"
 					 ":FILE: [[papers:%l.pdf]]\n"
 					 ":END:\n"))))
   (define-key org-mode-map (kbd "C-c )") 'reftex-citation))
