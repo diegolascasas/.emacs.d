@@ -13,8 +13,8 @@
   (setq ess-swv-plug-into-AUCTeX-p t)
 
   (setq ess-smart-S-assign-key "C-=")
-  (ess-toggle-S-assign-key nil)
-
+  (ess-toggle-S-assign nil)
+  (ess-toggle-S-assign nil) ;; ugly uglyness argh my eyes!
 
 
   (define-key ess-mode-map [(super .)] "%>%")
