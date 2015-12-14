@@ -6,15 +6,17 @@
   (setq ess-use-auto-complete nil)
   (setq ess-use-ido t)
   (setq comint-scroll-to-bottom-on-input t)
-  (setq comint-scroll-to-bottom-on-output t)
+  ;; (setq comint-scroll-to-bottom-on-output t)
   (setq comint-move-point-for-output t)
   (setq ess-eval-visibly-p nil)  ; Assincronous run
   (setq ess-swv-processor 'knitr) ;; setup literal programming
   (setq ess-swv-plug-into-AUCTeX-p t)
 
   (setq ess-smart-S-assign-key "C-=")
-  (ess-toggle-S-assign nil)
-  (ess-toggle-S-assign nil) ;; ugly uglyness argh my eyes!
+  (ess-toggle-S-assign nil)     ;; ...
+  (ess-toggle-S-assign nil)     ;; Ugly!
+  (ess-toggle-S-assign-key nil) ;; Ugly!!!!
+
 
 
   (define-key ess-mode-map [(super .)] "%>%")
