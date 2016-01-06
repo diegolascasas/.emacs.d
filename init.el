@@ -59,3 +59,11 @@
 # then enter the text in that file's own buffer.
 
 ")
+
+
+;;
+(use-package bookmark
+  :config
+  (bookmark-bmenu-list)
+  (switch-to-buffer "*Bookmark List*")
+  :demand)
