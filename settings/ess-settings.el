@@ -12,15 +12,18 @@
   (setq ess-swv-processor 'knitr) ;; setup literal programming
   (setq ess-swv-plug-into-AUCTeX-p t)
 
-  (setq ess-smart-S-assign-key "C-=")
+
+  ;; Use C-= for assignments and C-+ for piping
+
+  (setq ess-smart-S-assign-key (kbd "C-="))
   (ess-toggle-S-assign nil)     ;; ...
   (ess-toggle-S-assign nil)     ;; Ugly!
-  (ess-toggle-S-assign-key nil) ;; Ugly!!!!
+  (ess-toggle-S-assign-key nil) ;;
+
+  (define-key ess-mode-map (kbd "C-+") "%>%")
 
 
-
-  (define-key ess-mode-map [(super .)] "%>%")
-  ;; Reset indentation configurations so it works well with %>%
+  ;; Reset indentation configurations so it works well with piping
   (add-to-list 'ess-style-alist
 	       '(my-style
 		 (ess-indent-level . 4)
@@ -33,7 +36,7 @@
 		 (ess-brace-imaginary-offset . 0)
 		 (ess-continued-brace-offset . 0)
 		 (ess-arg-function-offset . 4)
-		 (ess-arg-function-offset-new-line . '(4))
+;;		 (ess-arg-function-offset-new-line . '(4))
 		 ))
   (setq ess-default-style 'my-style)
 
@@ -57,28 +60,28 @@
 
 
 
-;; source: https://github.com/emacs-ess/ESS/issues/96
-;; Pretty arrows and magrittr pipes in R
-(defvar pretty-alist
-  (cl-pairlis '() '()))
-(add-to-list 'pretty-alist '("%>%" . "⇛"))
-(add-to-list 'pretty-alist '("<-" . "⇐"))
-(defun pretty-things ()
-  (mapc
-   (lambda (x)
-     (let ((word (car x))
-           (char (cdr x)))
-       (font-lock-add-keywords
-        nil
-        `((,(concat "\\(^\\|[^a-zA-Z0-9]\\)\\(" word "\\)[a-zA-Z]")
-	   (0 (progn
-                 (decompose-region (match-beginning 2) (match-end 2))
-                 nil)))))
-       (font-lock-add-keywords
-        nil
-        `((,(concat "\\(^\\|[^a-zA-Z0-9]\\)\\(" word "\\)[^a-zA-Z]")
-	   (0 (progn
-                 (compose-region (match-beginning 2) (match-end 2)
-				 ,char)
-                 nil)))))))
-   pretty-alist))
+;; ;; source: https://github.com/emacs-ess/ESS/issues/96
+;; ;; Pretty arrows and magrittr pipes in R
+;; (defvar pretty-alist
+;;   (cl-pairlis '() '()))
+;; (add-to-list 'pretty-alist '("%>%" . "⇛"))
+;; (add-to-list 'pretty-alist '("<-" . "⇐"))
+;; (defun pretty-things ()
+;;   (mapc
+;;    (lambda (x)
+;;      (let ((word (car x))
+;;            (char (cdr x)))
+;;        (font-lock-add-keywords
+;;         nil
+;;         `((,(concat "\\(^\\|[^a-zA-Z0-9]\\)\\(" word "\\)[a-zA-Z]")
+;; 	   (0 (progn
+;;                  (decompose-region (match-beginning 2) (match-end 2))
+;;                  nil)))))
+;;        (font-lock-add-keywords
+;;         nil
+;;         `((,(concat "\\(^\\|[^a-zA-Z0-9]\\)\\(" word "\\)[^a-zA-Z]")
+;; 	   (0 (progn
+;;                  (compose-region (match-beginning 2) (match-end 2)
+;; 				 ,char)
+;;                  nil)))))))
+;;    pretty-alist))

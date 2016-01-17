@@ -39,15 +39,15 @@
 ;;  run emacs on a shell when acessing remotely, so I keep most
 ;;  packages out of the shell version
 (load "misc-settings")
-(load "keybindings.el")
+(load "keybindings")
 (when window-system
   (load "window-sistem-settings")
-  (load "python-settings")
   (load "ess-settings")
+  (load "python-settings")
   (load "tex-settings")
   (load "dired-settings")
   (load "org-settings")
-  (load "project-management-settings.el"))
+  (load "project-management-settings"))
 
 ;; I don't do much lisp programing, but allways write my notes in orgmode.
 ;;  So the scratch buffer serves me better at org-mode.

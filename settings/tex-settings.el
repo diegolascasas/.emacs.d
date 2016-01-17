@@ -13,7 +13,7 @@
     (add-hook 'LaTeX-mode-hook #'flyspell-mode)
     (setq TeX-PDF-mode t
 	  TeX-parse-self t
-	  TeX-autosave t)))
+	  TeX-auto-save t)))
 
 (use-package preview
   :commands LaTeX-preview-setup

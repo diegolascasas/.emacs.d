@@ -56,7 +56,7 @@
 (use-package flx-ido
   :config
   (ido-mode 1)
-  (ido-everywhere 1)
+  ;; (ido-everywhere 1)
   (flx-ido-mode 1)
   (setq ido-enable-flex-matching 1
 	ido-use-faces nil))
