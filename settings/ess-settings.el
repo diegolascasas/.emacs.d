@@ -22,24 +22,6 @@
 
   (define-key ess-mode-map (kbd "C-+") "%>%")
 
-
-  ;; Reset indentation configurations so it works well with piping
-  (add-to-list 'ess-style-alist
-	       '(my-style
-		 (ess-indent-level . 4)
-		 (ess-first-continued-statement-offset . 2) ;; <- Important
-		 (ess-continued-statement-offset . 0) ;; <- Important
-		 (ess-brace-offset . -4)
-		 (ess-expression-offset . 4)
-		 (ess-else-offset . 0)
-		 (ess-close-brace-offset . 0)
-		 (ess-brace-imaginary-offset . 0)
-		 (ess-continued-brace-offset . 0)
-		 (ess-arg-function-offset . 4)
-;;		 (ess-arg-function-offset-new-line . '(4))
-		 ))
-  (setq ess-default-style 'my-style)
-
   (add-hook 'R-mode-hook
 	    (lambda ()
         (font-lock-add-keywords nil
