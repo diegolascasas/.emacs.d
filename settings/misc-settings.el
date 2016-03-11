@@ -1,4 +1,7 @@
 
+;;
+(set-language-environment "UTF-8")
+
 ;;;; Setup electric-pair
 (electric-pair-mode 1)
 (setq electric-pair-pairs '((?\" . ?\")
@@ -9,9 +12,14 @@
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
 
 ;;;; SQL -- truncate lines when using the shell
+
+
 (add-hook 'sql-interactive-mode-hook
           (lambda ()
-            (toggle-truncate-lines t)))
+            (toggle-truncate-lines t))
+	  '(sql-set-product-feature
+	   'mysql :prompt-regexp "^\\(?:mysql\\|mariadb\\).*> "))
+
 
 ;;;; Backup and Autosave files
 ;; Store in .emacs.d
