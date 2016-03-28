@@ -17,3 +17,6 @@
                   (join-line -1)))
 
 (global-set-key (kbd "C-c v") 'switch-text-view)
+
+
+(global-set-key (kbd "C-c C-i") 'insert-file-name)

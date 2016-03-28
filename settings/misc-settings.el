@@ -1,15 +1,36 @@
 
 ;;
 (set-language-environment "UTF-8")
+;; (setq locale-coding-system 'utf-8)
+;; (set-terminal-coding-system 'utf-8)
+;; (set-keyboard-coding-system 'utf-8)
+;; (set-selection-coding-system 'utf-8)
+;; (prefer-coding-system 'utf-8)
+;; (setenv "LC_CTYPE" "UTF-8")
+
 
 ;;;; Setup electric-pair
 (electric-pair-mode 1)
 (setq electric-pair-pairs '((?\" . ?\")
                             (?\{ . ?\})
 			    ))
+
+;; Show matching parens
+(setq show-paren-delay 0)
+(show-paren-mode 1)
+;; (use-package rainbow-delimiters
+;;   :config
+;;     (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+;;   )
+
+
 ;;;; Autoloads
 ;; autolad octave mode for *.m-files
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
+
+;;
+(use-package markdown-mode
+  :mode "\\.md\\'")
 
 ;;;; SQL -- truncate lines when using the shell
 
@@ -43,16 +64,15 @@
 		(when (stringp method)
 		  (member method '("su" "sudo"))))))))
 
-;;;; Set re-builder to work with strings
+;; Set re-builder to work with strings
 (require 're-builder)
 (setq reb-re-syntax 'string)
 
-;;;; Enable windmove
+;; Enable windmove
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
 
-;;;; Fix linux keyboard issues with accents
-
+;; Fix linux keyboard issues with accents
 (when (system-is-linux)
   (require 'iso-transl)
   (global-set-key (kbd "<dead-acute> c")
@@ -75,7 +95,7 @@
 (use-package guide-key
   :config
   (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v"
-				       "C-x 8" "C-c p"
+				       "C-x 8" "C-c p" "C-h"
 				       (bibtex-mode "C-c C-e"))
 	guide-key/popup-window-position 'bottom
 	guide-key/recursive-key-sequence-flag t)
@@ -98,12 +118,6 @@
   ("C-?" . er/expand-region))
 
 
-;; (setq locale-coding-system 'utf-8)
-;; (set-terminal-coding-system 'utf-8)
-;; (set-keyboard-coding-system 'utf-8)
-;; (set-selection-coding-system 'utf-8)
-;; (prefer-coding-system 'utf-8)
-;; (setenv "LC_CTYPE" "UTF-8")
 
 
 (use-package processing-mode
