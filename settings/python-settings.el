@@ -1,6 +1,4 @@
 
-
-
 ;; (use-package virtualenvwrapper
 ;;   :commands venv-workon
 ;;   :config

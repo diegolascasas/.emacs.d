@@ -18,5 +18,4 @@
 
 (global-set-key (kbd "C-c v") 'switch-text-view)
 
-
-(global-set-key (kbd "C-c C-i") 'insert-file-name)
+(global-set-key (kbd "C-c f") 'insert-file-name)

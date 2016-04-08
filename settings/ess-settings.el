@@ -1,7 +1,9 @@
 
 ;; Adapted with  minor changes from Felipe Salazar at http://www.emacswiki.org/emacs/EmacsSpeaksStatistics
 (use-package ess-site
-  :mode ("\\.[Rr]\\'" . R-mode)
+  :mode
+  ("\\.[Rr]\\'" . R-mode)
+  ("\\.[Rr]nw\\'" . tex-mode) ;; check if this is right
   :config
   (setq ess-use-auto-complete nil)
   (setq ess-use-ido t)
