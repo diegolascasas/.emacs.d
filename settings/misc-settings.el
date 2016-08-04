@@ -1,13 +1,15 @@
 
 ;;
-;; (set-language-environment "UTF-8")
+;; (set-language-environment "English")
 (setq locale-coding-system 'utf-8)
 ;; (set-terminal-coding-system 'utf-8)
 ;; (set-keyboard-coding-system 'utf-8)
 ;; (set-selection-coding-system 'utf-8)
 ;; (prefer-coding-system 'utf-8)
-;; (setenv "LC_CTYPE" "UTF-8")
 
+(setenv "LC_CTYPE" "UTF-8")
+(setenv "LC_ALL" "en_US.UTF-8")
+(setenv "LANG" "en_US.UTF-8")
 
 ;;;; Setup electric-pair
 (electric-pair-mode 1)
@@ -142,5 +144,11 @@
 ;;;; Remove trailing whitespaces when saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+
+;; ;;; SCALA
+;; (use-package ensime
+;;   :commands ensime ensime-mode)
+;; (add-hook 'scala-mode-hook 'ensime-mode)
+;; (use-package scala-mode2)
 
 (toggle-window-split)

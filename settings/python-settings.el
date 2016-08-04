@@ -1,4 +1,7 @@
 
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i")
+
 ;; (use-package virtualenvwrapper
 ;;   :commands venv-workon
 ;;   :config
