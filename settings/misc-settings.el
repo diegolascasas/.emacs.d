@@ -2,6 +2,7 @@
 ;;
 ;; (set-language-environment "English")
 (setq locale-coding-system 'utf-8)
+(set-language-environment "UTF-8")
 ;; (set-terminal-coding-system 'utf-8)
 ;; (set-keyboard-coding-system 'utf-8)
 ;; (set-selection-coding-system 'utf-8)
@@ -119,9 +120,6 @@
   :bind
   ("C-?" . er/expand-region))
 
-
-
-
 (use-package processing-mode
   :mode "\\.pde$"
   :config
@@ -141,6 +139,10 @@
 (use-package ace-jump-mode
   :bind ("C-." . ace-jump-mode))
 
+(use-package auto-complete
+  :config
+  (global-auto-complete-mode t))
+
 ;;;; Remove trailing whitespaces when saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
@@ -152,3 +154,6 @@
 ;; (use-package scala-mode2)
 
 (toggle-window-split)
+
+(global-eldoc-mode -1) ;; headaches when making long computations in
+		       ;; python-mode
