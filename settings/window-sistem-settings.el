@@ -7,8 +7,7 @@
 (use-package color-theme-sanityinc-tomorrow
   :init (load-theme 'sanityinc-tomorrow-night))
 
-
-(global-linum-mode 1)
+;; (global-linum-mode 1)
 (text-scale-increase 1)
 
 (when (system-is-mac)
