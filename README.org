@@ -2,9 +2,19 @@
 My Emacs dotfile.
 
 * Notes
+- Private/local configurations can be kept in ~custom.el~
 - These settings are not tested in Windows
-- In a mac a remap Meta to cmd and Super to option, but only in the graphical interface.
+- My normal workflow is through the GUI (in OSX). I used to remap Meta to Cmd, but sometimes I open emacs in a terminal and this makes everything confusing.
+
+
+* External dependencies
+- I use ~Ipython~ as my python console
+- ~eimp~ uses ~imagemagick~ to display images in dired
+
 
 * Next Steps
-- [[https://github.com/bbatsov/projectile][Add Projectile]]
-- [[http://tuhdo.github.io/helm-intro.html][Add Helm]]
+- Settle on a proper way of handling bibliography notes in org-mode (maybe implement some functions)
+- Investigate [[https://github.com/zk-phi/phi-search][phi-search]]
+- Drag-and-drop files in dired on OSX.
+- Lern to use [[https://github.com/bbatsov/projectile][Projectile]]
+- Add and test [[http://tuhdo.github.io/helm-intro.html][Helm]]
