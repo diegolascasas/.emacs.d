@@ -16,5 +16,5 @@ My Emacs dotfile.
 - Settle on a proper way of handling bibliography notes in org-mode (maybe implement some functions)
 - Investigate [[https://github.com/zk-phi/phi-search][phi-search]]
 - Drag-and-drop files in dired on OSX.
-- Lern to use [[https://github.com/bbatsov/projectile][Projectile]]
+- Learn to use [[https://github.com/bbatsov/projectile][Projectile]]
 - Add and test [[http://tuhdo.github.io/helm-intro.html][Helm]]

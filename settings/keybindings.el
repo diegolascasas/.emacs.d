@@ -21,3 +21,5 @@
 (global-set-key (kbd "C-c f") 'insert-file-name)
 
 (global-set-key (kbd "C-c l") 'linum-mode)
+
+(global-set-key (kbd "C-x C-b") 'ibuffer)

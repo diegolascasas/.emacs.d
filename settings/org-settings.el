@@ -73,3 +73,8 @@
   (setq deft-use-filename-as-title t)
   :bind ("C-c d" . deft)
   :ensure t)
+
+
+
+;;;; ORG-REF ;;;;
+(use-package org-ref)
