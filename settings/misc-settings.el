@@ -1,4 +1,18 @@
 
+
+
+;; (use-package monokai-theme
+;;   :init (load-theme 'monokai))
+
+;; (use-package cyberpunk-theme
+;;   :init (load-theme 'cyberpunk t))
+
+;; (use-package base16-theme
+;;   :init (load-theme 'base16-tomorrow-night))
+
+(use-package color-theme-sanityinc-tomorrow
+  :init (load-theme 'sanityinc-tomorrow-night))
+
 ;;
 ;; (set-language-environment "English")
 (setq locale-coding-system 'utf-8)
@@ -98,7 +112,7 @@
 (use-package guide-key
   :config
   (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v"
-				       "C-x 8" "C-c p" "C-h"
+				       "C-x 8" "C-c p" "C-h" "M-s"
 				       (bibtex-mode "C-c C-e"))
 	guide-key/popup-window-position 'bottom
 	guide-key/recursive-key-sequence-flag t)

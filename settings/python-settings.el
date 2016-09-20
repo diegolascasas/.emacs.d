@@ -2,6 +2,14 @@
 (setq python-shell-interpreter "ipython"
       python-shell-interpreter-args "-i")
 
+(use-package jedi
+  :config
+  (setq jedi:complete-on-dot t
+	jedi:use-shortcuts t
+	jedi:get-in-function-call-delay 100
+	jedi:tooltip-method nil)
+  (add-hook 'python-mode-hook 'jedi:setup))
+
 ;; (use-package virtualenvwrapper
 ;;   :commands venv-workon
 ;;   :config

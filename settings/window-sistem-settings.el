@@ -1,11 +1,3 @@
-;; (use-package monokai-theme
-;;   :init (load-theme 'monokai))
-
-;; (use-package cyberpunk-theme
-;;   :init (load-theme 'cyberpunk t))
-
-(use-package color-theme-sanityinc-tomorrow
-  :init (load-theme 'sanityinc-tomorrow-night))
 
 ;; (global-linum-mode 1)
 (text-scale-increase 1)
